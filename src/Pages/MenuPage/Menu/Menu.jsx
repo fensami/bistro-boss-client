@@ -13,12 +13,12 @@ import MenuCategory from '../MenuCategory/MenuCategory';
 
 const Menu = () => {
     const [menu] = useMenu()
-    const dessert = menu.filter(item=> item.category === 'dessert')
-    const soup = menu.filter(item=> item.category === 'soup')
-    const pizza = menu.filter(item=> item.category === 'pizza')
+    const dessert = menu.filter(item => item.category === 'dessert')
+    const soup = menu.filter(item => item.category === 'soup')
+    const pizza = menu.filter(item => item.category === 'pizza')
     // const popular = menu.filter(item=> item.category === 'popular')
-    const salad = menu.filter(item=> item.category === 'salad')
-    const offered = menu.filter(item=> item.category === 'offered')
+    const salad = menu.filter(item => item.category === 'salad')
+    const offered = menu.filter(item => item.category === 'offered')
     return (
         <div>
             <Helmet>
@@ -29,25 +29,14 @@ const Menu = () => {
             {/* Offered menu items */}
             <MenuCategory items={offered}></MenuCategory>
             {/* Dessert Menu Items */}
-            <MenuCategory items={dessert}
-            title='Dessert'
-            img={dessertImg}
-            ></MenuCategory>
+            <MenuCategory items={dessert}  title='dessert' img={dessertImg}></MenuCategory>
             {/* pizza Menu Items */}
-            <MenuCategory items={pizza}
-            title='pizza'
-            img={pizzaImg}
+            <MenuCategory items={pizza} title='pizza'  img={pizzaImg}
             ></MenuCategory>
             {/* Salad Menu Items */}
-            <MenuCategory items={salad}
-            title='salad'
-            img={saladImg}
-            ></MenuCategory>
+            <MenuCategory items={salad} title='salad' img={saladImg}></MenuCategory>
             {/* pizza Menu Items */}
-            <MenuCategory items={soup}
-            title='soup'
-            img={soupImg}
-            ></MenuCategory>
+            <MenuCategory items={soup} title='soup' img={soupImg}></MenuCategory>
         </div>
     );
 };
