@@ -1,10 +1,11 @@
-import { useContext, useEffect,useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Swal from 'sweetalert2'
 
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 
 const Login = () => {
     // const captchaRef = useRef(null)
@@ -34,7 +35,7 @@ const Login = () => {
                     timer: 1500
                 })
             });
-            navigate(from, { replace: true });
+        navigate(from, { replace: true });
     }
     useEffect(() => {
         loadCaptchaEnginge(6);
@@ -85,22 +86,26 @@ const Login = () => {
                                     <LoadCanvasTemplate />
 
                                 </label>
-                                <input  onBlur={handleValidateCapthcha} type="text"  name="captcha" placeholder="Type the Text above" className="input input-bordered" />
+                                <input onBlur={handleValidateCapthcha} type="text" name="captcha" placeholder="Type the Text above" className="input input-bordered" />
                                 {/* <button className="btn btn-outline btn-success">Validate Captcha</button> */}
 
 
                             </div>
                             <div className="form-control mt-6">
-                                
+
                                 {/* <input disabled={disabled} className="btn btn-primary" type="submit" value="Login" /> */}
                                 {/* TODO: make button disabled */}
                                 <input disabled={false} className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </div>
                         <p><small>New here?</small><Link to='/signup' className="text-orange-400">Create a New Account</Link></p>
+
+
+                    <SocialLogin></SocialLogin>
                     </form>
 
                 </div>
+
 
             </div>
         </>
